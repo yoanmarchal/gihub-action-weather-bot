@@ -1,0 +1,24 @@
+name: "Github Action weather  bot"
+
+on:
+  push:
+    branches:
+      - master
+  schedule:
+    - cron: '0 7 * * *'
+
+jobs:
+  bot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: 'Install node'
+        uses: actions/setup/node@v1
+      - name: 'Install NPM deps'
+        run: npm install
+      - name: 'Run code'
+        run: node index.js
+        env:
+          TELEGRAM_CHAT_ID: ${{ secret.TELEGRAM_CHAT_ID }}
+          TELEGRAM_TOKEN: ${{ secret.TELEGRAM_TOKEN}}
+          WEATHER_API_TOKEN: $ {{secret.WEATHER_API_TOKEN}}
