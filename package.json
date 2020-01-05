@@ -1,0 +1,13 @@
+{
+  "name": "gihub-action-weather-bot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/yoanmarchal/gihub-action-weather-bot.git",
+  "author": "Yoan marchal <marchalyoan@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "node-fetch": "^2.6.0",
+    "node-telegram-bot-api": "^0.40.0"
+  }
+}
